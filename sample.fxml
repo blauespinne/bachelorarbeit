@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.TilePane?>
+
+<GridPane hgap="10.0" prefHeight="520.0" prefWidth="905.0" vgap="10.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints maxWidth="340.0" minWidth="0.0" prefWidth="321.33331298828125" />
+      <ColumnConstraints maxWidth="201.0" minWidth="0.0" prefWidth="0.0" />
+      <ColumnConstraints maxWidth="201.0" minWidth="0.0" prefWidth="0.0" />
+      <ColumnConstraints maxWidth="201.0" minWidth="0.0" prefWidth="0.0" />
+      <ColumnConstraints maxWidth="341.9999694824219" minWidth="47.0" prefWidth="192.0" />
+      <ColumnConstraints maxWidth="200.0" minWidth="0.0" prefWidth="0.0" />
+      <ColumnConstraints maxWidth="200.0" minWidth="0.0" prefWidth="0.0" />
+      <ColumnConstraints maxWidth="200.0" minWidth="0.0" prefWidth="0.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+      <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+      <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+      <RowConstraints />
+      <RowConstraints maxHeight="52.666656494140625" minHeight="0.0" prefHeight="0.0" />
+      <RowConstraints maxHeight="52.666656494140625" minHeight="0.0" prefHeight="0.0" />
+      <RowConstraints maxHeight="357.3333435058594" minHeight="215.33334350585938" prefHeight="278.0" />
+      <RowConstraints maxHeight="357.3333435058594" minHeight="215.33334350585938" prefHeight="249.3333740234375" />
+      <RowConstraints maxHeight="268.0" minHeight="7.6666259765625" prefHeight="7.6666259765625" />
+   </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="309.0" prefWidth="391.0" GridPane.columnIndex="4" GridPane.rowIndex="6">
+         <children>
+            <TextArea fx:id="opinionTextArea" layoutX="-35.0" layoutY="-4.0" maxHeight="-Infinity" maxWidth="-Infinity" onMouseReleased="#onCharacterEntered" prefHeight="69.0" prefWidth="411.0" wrapText="true" />
+            <Label layoutX="-35.0" layoutY="-32.0" prefHeight="22.0" prefWidth="168.0" text="Schreiben Sie Ihre Meinung:" />
+            <GridPane layoutX="-34.0" layoutY="69.0" prefHeight="104.0" prefWidth="338.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="63.3333740234375" minWidth="10.0" prefWidth="37.3333740234375" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="99.6666259765625" minWidth="10.0" prefWidth="99.6666259765625" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="74.33331298828125" minWidth="10.0" prefWidth="27.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="131.0" minWidth="10.0" prefWidth="131.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="48.333343505859375" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Wörter" />
+                  <Label text="positiv" GridPane.columnIndex="1" />
+                  <Label text="negativ" GridPane.columnIndex="3" />
+                  <Label text="neutral" GridPane.columnIndex="5" />
+                  <Label text="Polarität" GridPane.rowIndex="4" />
+                  <Label text="Klassifikation" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <TextField fx:id="positiveWordsTextField" prefHeight="29.0" prefWidth="81.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="negativeWordsTextField" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <TextField fx:id="neutralWordsTextField" prefHeight="29.0" prefWidth="62.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                  <TextField fx:id="polarityTextField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="classificationTextField" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+               </children>
+            </GridPane>
+            <Label layoutY="204.0" text="Evaluierung" />
+         </children></AnchorPane>
+      <AnchorPane prefHeight="295.0" prefWidth="200.0" GridPane.rowIndex="6">
+         <children>
+            <Label layoutX="14.0" layoutY="-29.0" text="Klassifikator" />
+            <Group layoutX="14.0" layoutY="39.0">
+               <children>
+                  <RadioButton fx:id="primitiveNoPolarityChoice" layoutY="-47.0" mnemonicParsing="false" selected="true" text="Primitiv ohne Polarität">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="classifiers" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="primitiveWithPolarityChoice" layoutY="-27.0" mnemonicParsing="false" text="Primitiv mit Polarität" toggleGroup="$classifiers" />
+                  <RadioButton fx:id="ruleBasedChoice" layoutY="-8.0" mnemonicParsing="false" text="Regelbasiert" toggleGroup="$classifiers" />
+                  <RadioButton fx:id="naiveBayes" layoutY="31.0" mnemonicParsing="false" text="Naiver Bayes" toggleGroup="$classifiers" />
+                  <RadioButton fx:id="domainSpecificChoice" layoutY="12.0" mnemonicParsing="false" text="Domänenspezifisch" toggleGroup="$classifiers" />
+               </children>
+            </Group>
+            <Button fx:id="deleteButton" layoutX="195.0" layoutY="37.0" mnemonicParsing="false" onMouseClicked="#emptyTextArea" text="Löschen" />
+            <CheckBox fx:id="polAdj" layoutX="16.0" layoutY="108.0" mnemonicParsing="false" text="polAdj" />
+            <CheckBox fx:id="negation" layoutX="81.0" layoutY="109.0" mnemonicParsing="false" text="negation" />
+            <CheckBox fx:id="modal" layoutX="16.0" layoutY="128.0" mnemonicParsing="false" text="modals" />
+            <CheckBox fx:id="lexiconPOS" layoutX="81.0" layoutY="129.0" mnemonicParsing="false" text="lexikonPOS" />
+            <CheckBox fx:id="intensifiers" layoutX="16.0" layoutY="148.0" mnemonicParsing="false" text="intensifiers" />
+            <Label layoutX="16.0" layoutY="89.0" text="Aktive Regeln" />
+            <Button fx:id="classificationButton" layoutX="193.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#onCharacterEntered" text="Klassifizieren" />
+            <Button fx:id="initialisationButton" layoutX="6.0" layoutY="177.0" mnemonicParsing="false" onMouseClicked="#initialize" text="Initialisieren" />
+            <Label layoutX="184.0" layoutY="108.0" text="pmi" />
+            <Label layoutX="182.0" layoutY="140.0" text="frequency" />
+            <TextField fx:id="pmiTextField" layoutX="249.0" layoutY="101.0" prefHeight="29.0" prefWidth="35.0" />
+            <TextField fx:id="frequencyTextField" layoutX="248.0" layoutY="136.0" prefHeight="17.0" prefWidth="35.0" />
+            <Button layoutX="107.0" layoutY="177.0" mnemonicParsing="false" onMouseClicked="#createData" text="Trainieren" />
+            <Button layoutX="200.0" layoutY="177.0" mnemonicParsing="false" onMouseClicked="#evaluate" text="Evaluieren" />
+            <CheckBox fx:id="ruleBasedEval" layoutX="275.0" layoutY="181.0" mnemonicParsing="false" text="mit regelbas." />
+         </children>
+      </AnchorPane>
+      <TilePane GridPane.rowIndex="7" GridPane.rowSpan="2">
+         <children>
+            <GridPane prefHeight="81.0" prefWidth="146.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="25.66668701171875" minHeight="10.0" prefHeight="25.66668701171875" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="27.666656494140625" minHeight="10.0" prefHeight="19.33331298828125" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="33.333343505859375" minHeight="10.0" prefHeight="20.333343505859375" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="35.333343505859375" minHeight="10.0" prefHeight="22.333343505859375" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="22.33331298828125" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="26.333343505859375" minHeight="10.0" prefHeight="24.333343505859375" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="26.333343505859375" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label text="  Allgemeines Lexikon" />
+                  <Label text="  Trainingsdaten" GridPane.rowIndex="1" />
+                  <Label text="  Domänen-Index" GridPane.rowIndex="2" />
+                  <Label text="  Pfad der Features" GridPane.rowIndex="3" />
+                  <Label text="  Allgemeiner Index" GridPane.rowIndex="4" />
+                  <Label text="  Testdaten" GridPane.rowIndex="5" />
+                  <Label text="  TreeTagger Sprachmodul" GridPane.rowIndex="6" />
+               </children>
+            </GridPane>
+            <GridPane prefHeight="137.0" prefWidth="146.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TextField fx:id="domainSpecificIndexTextField" maxHeight="34.0" prefHeight="34.0" prefWidth="146.0" promptText="\\\PATH\\" GridPane.rowIndex="2" />
+                  <TextField fx:id="featuresTextField" maxHeight="36.0" prefHeight="36.0" prefWidth="146.0" promptText="\\\PATH\\" GridPane.rowIndex="3" />
+                  <TextField fx:id="generalIndexTextField" maxHeight="36.0" prefHeight="36.0" prefWidth="146.0" promptText="\\\PATH\\" GridPane.rowIndex="4" />
+                  <TextField fx:id="testDataTextField" maxHeight="40.0" prefHeight="40.0" prefWidth="146.0" promptText="\\\PATH\\" GridPane.rowIndex="5" />
+                  <TextField fx:id="trainingDataTextField" maxHeight="32.0" prefHeight="32.0" prefWidth="146.0" promptText="\\\PATH\\" GridPane.rowIndex="1" />
+                  <TextField fx:id="lexiconTextField" maxHeight="29.0" prefHeight="19.0" prefWidth="146.0" promptText="\\\PATH\\lexicon.txt" />
+                  <TextField fx:id="treeTaggerTextField" prefHeight="16.0" prefWidth="146.0" promptText="\\\PATH\\" GridPane.rowIndex="6" />
+               </children>
+            </GridPane>
+         </children>
+      </TilePane>
+      <TilePane GridPane.columnIndex="4" GridPane.rowIndex="7">
+         <children>
+            <TextArea fx:id="evaluationTextArea" prefHeight="198.0" prefWidth="309.0" />
+         </children>
+      </TilePane>
+   </children>
+</GridPane>
